@@ -1,0 +1,11 @@
+html {
+  text-align: center;
+  background: url(img/background.jpg) no-repeat;
+  background-size: cover;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
