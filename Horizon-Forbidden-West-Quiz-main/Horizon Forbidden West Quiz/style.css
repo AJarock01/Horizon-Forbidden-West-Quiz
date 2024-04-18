@@ -1,0 +1,10 @@
+html {
+  text-align: center;
+  background-color: turquoise;
+  color: black;
+}
+
+body {
+  border: 5px black;
+  border-radius: 5px black;
+}
