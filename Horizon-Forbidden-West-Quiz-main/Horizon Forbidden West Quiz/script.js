@@ -7,7 +7,6 @@ document.getElementById("pic3").addEventListener("click", choose3);
 document.getElementById("pic4").addEventListener("click", choose4);
 
 let choseCorrectPicture = false;
-let score = 0;
 
 function choose1() {
   document.getElementById("pic1").style.border = "2px solid blue";
@@ -47,12 +46,14 @@ document.getElementById("pic2a").addEventListener("click", choose2a);
 document.getElementById("pic3a").addEventListener("click", choose3a);
 document.getElementById("pic4a").addEventListener("click", choose4a);
 
+let choseCorrectPicture1 = false;
+
 function choose1a() {
   document.getElementById("pic1a").style.border = "2px solid blue";
   document.getElementById("pic2a").style.border = "none";
   document.getElementById("pic3a").style.border = "none";
   document.getElementById("pic4a").style.border = "none";
-  choseCorrectPicture = false;
+  choseCorrectPicture1 = false;
 }
 
 function choose2a() {
@@ -60,7 +61,7 @@ function choose2a() {
   document.getElementById("pic1a").style.border = "none";
   document.getElementById("pic3a").style.border = "none";
   document.getElementById("pic4a").style.border = "none";
-  choseCorrectPicture = false;
+  choseCorrectPicture1 = false;
 }
 
 function choose3a() {
@@ -68,7 +69,7 @@ function choose3a() {
   document.getElementById("pic1a").style.border = "none";
   document.getElementById("pic2a").style.border = "none";
   document.getElementById("pic4a").style.border = "none";
-  choseCorrectPicture = true;
+  choseCorrectPicture1 = true;
 }
 
 function choose4a() {
@@ -76,7 +77,7 @@ function choose4a() {
   document.getElementById("pic1a").style.border = "none";
   document.getElementById("pic2a").style.border = "none";
   document.getElementById("pic3a").style.border = "none";
-  choseCorrectPicture = false;
+  choseCorrectPicture1 = false;
 }
 
 // Q3 code below
@@ -85,12 +86,14 @@ document.getElementById("pic2b").addEventListener("click", choose2b);
 document.getElementById("pic3b").addEventListener("click", choose3b);
 document.getElementById("pic4b").addEventListener("click", choose4b);
 
+let choseCorrectPicture2 = false;
+
 function choose1b() {
   document.getElementById("pic1b").style.border = "2px solid blue";
   document.getElementById("pic2b").style.border = "none";
   document.getElementById("pic3b").style.border = "none";
   document.getElementById("pic4b").style.border = "none";
-  choseCorrectPicture = false;
+  choseCorrectPicture2 = false;
 }
 
 function choose2b() {
@@ -98,7 +101,7 @@ function choose2b() {
   document.getElementById("pic1b").style.border = "none";
   document.getElementById("pic3b").style.border = "none";
   document.getElementById("pic4b").style.border = "none";
-  choseCorrectPicture = false;
+  choseCorrectPicture2 = false;
 }
 
 function choose3b() {
@@ -106,7 +109,7 @@ function choose3b() {
   document.getElementById("pic1b").style.border = "none";
   document.getElementById("pic2b").style.border = "none";
   document.getElementById("pic4b").style.border = "none";
-  choseCorrectPicture = false;
+  choseCorrectPicture2 = false;
 }
 
 function choose4b() {
@@ -114,51 +117,51 @@ function choose4b() {
   document.getElementById("pic1b").style.border = "none";
   document.getElementById("pic2b").style.border = "none";
   document.getElementById("pic3b").style.border = "none";
-  choseCorrectPicture = true;
+  choseCorrectPicture2 = true;
 }
 
 // Q4 code below
-document.getElementById("pic1c").addEventListener("click", choose1c);
-document.getElementById("pic2c").addEventListener("click", choose2c);
-document.getElementById("pic3c").addEventListener("click", choose3c);
-document.getElementById("pic4c").addEventListener("click", choose4c);
+document.getElementById("None").addEventListener("click", NS);
+document.getElementById("Burrower").addEventListener("click", BS);
+document.getElementById("Digger").addEventListener("click", DS);
+document.getElementById("Rockbreaker").addEventListener("click", RBS);
+document.getElementById("Grounder").addEventListener("click", GS);
 
-function choose1c() {
-  document.getElementById("pic1c").style.border = "2px solid blue";
-  document.getElementById("pic2c").style.border = "none";
-  document.getElementById("pic3c").style.border = "none";
-  document.getElementById("pic4c").style.border = "none";
-  choseCorrectPicture = true;
+let choseCorrectName = false;
+
+function NS() {
+  choseCorrectName = false;
+}
+function BS() {
+  choseCorrectName = false;
+}
+function DS() {
+  choseCorrectName = false;
+}
+function RBS() {
+  choseCorrectName = true;
+}
+function GS() {
+  choseCorrectName = false;
 }
 
-function choose2c() {
-  document.getElementById("pic2c").style.border = "2px solid blue";
-  document.getElementById("pic1c").style.border = "none";
-  document.getElementById("pic3c").style.border = "none";
-  document.getElementById("pic4c").style.border = "none";
-  choseCorrectPicture = false;
-}
-
-function choose3c() {
-  document.getElementById("pic3c").style.border = "2px solid blue";
-  document.getElementById("pic1c").style.border = "none";
-  document.getElementById("pic2c").style.border = "none";
-  document.getElementById("pic4c").style.border = "none";
-  choseCorrectPicture = false;
-}
-
-function choose4c() {
-  document.getElementById("pic4c").style.border = "2px solid blue";
-  document.getElementById("pic1c").style.border = "none";
-  document.getElementById("pic2c").style.border = "none";
-  document.getElementById("pic3c").style.border = "none";
-  choseCorrectPicture = false;
-}
 // overall button
 document.getElementById("checkQuizMark").addEventListener("click", markQuiz);
 
 function markQuiz() {
+  let score = 0;
   if (choseCorrectPicture) {
     score++;
   }
+  if (choseCorrectPicture1) {
+    score++;
+  }
+  if (choseCorrectPicture2) {
+    score++;
+  }
+  if (choseCorrectName) {
+    score++;
+  }
+  let percent = (score * 100) / 4;
+  document.getElementById("displayGrade").innerHTML = `${percent}`;
 }
